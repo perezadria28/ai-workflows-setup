@@ -51,7 +51,7 @@ Cuando recibas un **issue de GitHub**, debes:
 
 ## Formato de respuesta
 
-```
+\`\`\`
 # REVISIÓN: [Título Issue]
 
 ## Validación de Completitud
@@ -89,7 +89,7 @@ Esto está DONE cuando:
 
 ## Recomendación Final
 [Resumen: issue es LISTO para desarrollo / NECESITA REFINAMIENTO + qué cambios]
-```
+\`\`\`
 
 ## Instrucciones clave
 
