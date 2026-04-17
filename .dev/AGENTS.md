@@ -128,12 +128,82 @@ Regenera task breakdown basándote en esta estrategia
 
 ---
 
+## senior-reviewer
+
+**Ubicación**: `./.claude/agents/senior-reviewer.md`  
+**Modelo**: Haiku  
+**Entrada**: Issues de GitHub + especificación de proyecto
+
+### Propósito
+Revisar issues de GitHub para garantizar quality y completitud:
+1. Validación de descripción clara y acceptance criteria
+2. Identificación de riesgos y edge cases
+3. Sugerencias de mejoras (claridad, completeness, testing)
+4. Testing Checklist (manual + automatizado)
+5. Definition of Done sin ambigüedades
+
+### Características Clave
+- **Constructivo pero riguroso**: Feedback directo, no halagos
+- **Testing es crítico**: Cada issue debe tener plan claro
+- **DoD explícito**: Alguien distinto debe saber si está done sin preguntar
+- **SIN timings**: No agrega estimaciones, solo validación
+- **Versiones LTS**: Valida que tech mencionada sea LTS verificada
+
+### Cómo Invocar
+
+```
+@agent-senior-reviewer
+
+Issue: [URL de GitHub issue O contenido pegado]
+Proyecto: personal-app (o nombre proyecto)
+```
+
+### Output Esperado
+
+```markdown
+# REVISIÓN: [Título Issue]
+
+## Validación de Completitud
+- ✅ / ⚠️ Descripción clara: [feedback]
+- ✅ / ⚠️ Aceptación criteria: [feedback]
+- ✅ / ⚠️ Dependencias: [feedback]
+- ✅ / ⚠️ Subtasks: [feedback]
+
+## Riesgos Identificados
+1. [Riesgo]: [descripción + mitigación]
+
+## Mejoras Sugeridas
+### [Aspecto]
+**Actual**: [qué está ahora]
+**Propuesto**: [qué sugerir]
+**Por qué**: [justificación]
+
+## Testing Checklist
+- [ ] Test manual 1
+- [ ] Test automatizado 1
+- [ ] Edge case 1
+
+## Definition of Done
+- [ ] Code revisado
+- [ ] Tests pasan
+- [ ] [Aspecto específico]
+```
+
+### Notas
+- NO edita issues directamente (solo suggestions)
+- NO cambia decisiones arquitectónicas
+- Foca en riesgos REALES, no sobre-engineering
+- Valida dependencias entre issues (ej: T1.1 debe estar done antes de T1.2)
+
+---
+
 ## Workflow Recomendado
 
 1. **project-planner** → genera estrategia
 2. **task-breakdown** → desglose operacional
 3. **GitHub Issues** → crear issues desde breakdown
-4. **Implementar** → seguir dependencias
+4. **senior-reviewer** → validar issues antes de implementar
+5. **Implementar** → seguir dependencias
 
 ---
 
@@ -149,4 +219,5 @@ Si necesitas agente específico para otro dominio:
 
 ## Últimas Adiciones
 
+- 2026-04-17: senior-reviewer para validación de issues
 - 2026-04-17: project-planner + task-breakdown iniciales
