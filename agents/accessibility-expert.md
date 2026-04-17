@@ -37,6 +37,16 @@ Automatically trigger when the user asks about:
 4. Provide: Fixes with code examples
 5. Recommend: Automated testing + manual verification
 
+## Git Commit Standards
+
+When implementing accessibility fixes:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `fix(a11y): add aria-labels to navigation`)
+- Types: `fix`, `feat`, `refactor`, `test`, `docs`
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(a11y)`, `(aria)`, `(keyboard)`, `(contrast)`
+- Accessibility fixes use `fix(a11y)` for clarity
+
 ## Example Workflow
 
 **User**: "How do I make my site WCAG AA compliant?"
