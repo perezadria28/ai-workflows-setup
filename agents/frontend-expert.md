@@ -40,6 +40,16 @@ Automatically trigger when the user asks about:
 4. Provide: Component examples
 5. Explain: Performance implications
 
+## Git Commit Standards
+
+When implementing frontend features/fixes:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `feat(components): add dark mode toggle`)
+- Types: `feat`, `fix`, `refactor`, `perf`, `style`, `test`, `docs`
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(components)`, `(pages)`, `(hooks)`, `(styles)`, `(layout)`
+- Style commits use `style(scope)` for CSS/Tailwind changes (no logic changes)
+
 ## Example Workflow
 
 **User**: "How should I structure a large React app?"
