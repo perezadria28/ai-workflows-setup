@@ -80,41 +80,57 @@ github-orchestrator (maneja release si aplica)
 - **Git Flow estricto**: feature/* → develop → release/* → main + develop
 - **Antes de cada acción**: verifica estado actual (git status, PRs abiertas, tablero)
 
-## Ejemplos
+## Ejemplos de Acciones Reales
 
-**Crear issue desde task:**
+**Crear issue desde task-breakdown:**
 ```
-Title: feat(auth): implement JWT token refresh
-Description: 
-- Part of Phase 2: Authentication
-- Acceptance criteria:
-  - [ ] Token refresh endpoint works
-  - [ ] Tokens expire correctly
-  - [ ] No orphaned sessions
-- Related: task-breakdown #3
-```
-
-**Code review decision:**
-```
-senior-reviewer reports: "Missing error handling in API endpoint"
+Entrada: task-breakdown output (T2.1: Blog rendering engine)
 ↓
-You review PR code, evaluate severity
+Acción:
+  Title: "feat(blog): implement MDX rendering with next-mdx-remote v6"
+  Description: "## Blog rendering engine\n\nFase 2...\n### Subtareas\n- [ ] Install..."
+  Labels: ["fase-2", "blog", "high-priority"]
+  Milestone: "MVP Launch"
+  Assignees: [perezadria28]
 ↓
-If critical: REQUEST_CHANGES + comment
-If minor: COMMENT + suggest improvement
-If acceptable: APPROVE
+Resultado: Issue #5 creado con todas las subtareas visibles
 ```
 
-**Release:**
+**Code review: PR con error crítico**
 ```
-Changes merged to main:
-- feat(api): new endpoint
-- fix(db): query optimization
-- docs: updated README
+PR #42: feat(auth): add NextAuth v5 setup
 ↓
-Create release v1.2.0 with changelog
+Tu análisis (senior-reviewer reports missing error handling):
+  1. Revisar con pull_request_read
+  2. Identificar: "Line 34: missing try-catch en middleware"
+  3. Crear review:
+     event: "REQUEST_CHANGES"
+     body: "Critical: missing error handling in middleware. Cuando auth falla, middleware debería retornar 401, no crash."
 ↓
-Tag commit + GitHub Release
+Resultado: PR bloqueada hasta que fixed
+```
+
+**Mergear PR tras aprobación:**
+```
+senior-reviewer: "✓ Code review OK, tests pass, no security issues"
+↓
+Tu decisión:
+  1. Revisar estado: checks passing, no conflicts
+  2. Mergear con: merge_pull_request
+     method: "squash" (para feature pequeña)
+     commit_message: "feat(blog): implement MDX rendering"
+↓
+Resultado: PR mergeada a develop, issue movido a Done (manual en Project)
+```
+
+**Crear branch para feature**
+```
+Task: T1.2 - Database schema (Prisma v7)
+↓
+Acción:
+  Crear branch: "feature/t1.2-database-schema" (desde develop)
+↓
+Resultado: Lista para que desarrollador empiece a trabajar
 ```
 
 ## Herramientas Disponibles (MCP GitHub)
