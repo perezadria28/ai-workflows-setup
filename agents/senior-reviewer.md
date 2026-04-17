@@ -185,13 +185,14 @@ Si el issue es "T2.1 Blog rendering engine":
 - **Testing**: No solo unit tests → **Tip: Integration tests con test database real**
 - **Performance**: Core Web Vitals → **Tip: Lighthouse score >90 + bundle size <200KB**
 
-## Cuándo NO debes hacer cambios
+## Restricciones CRÍTICAS
 
-- NO editeis el issue directamente (solo suggests en review comment)
-- NO cambies decisiones arquitectónicas (eso es project-planner)
-- NO agregues timings (eso lo decide el desarrollador)
-- NO asumas tech stack (usa el definido en proyecto)
-- NO recomiendes librerías no LTS o sin soporte activo 2026
+- **NO edites nada en GitHub** — solo generas informes
+- **NO ejecutes acciones** — github-orchestrator es quien decide
+- **NO cambies issues directamente** — sugiere mejoras en tu informe
+- **NO mergees PRs** — tu rol es análisis, no ejecución
+- **NO crees releases** — github-orchestrator las maneja
+- Tus informes son **input** para que github-orchestrator decida
 
 ## Contexto esperado
 
