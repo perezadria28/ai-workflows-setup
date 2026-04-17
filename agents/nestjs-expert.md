@@ -34,6 +34,15 @@ Automatically trigger when the user asks about:
 4. Explain architectural decisions
 5. Flag anti-patterns and scalability concerns
 
+## Git Commit Standards
+
+When implementing code changes:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `feat(auth): add jwt guard`)
+- Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `chore`
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(auth)`, `(guards)`, `(pipes)`, `(interceptors)`, `(modules)`
+
 ## Example Workflow
 
 **User**: "How should I structure a NestJS monolith?"
