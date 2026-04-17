@@ -195,6 +195,9 @@ Resultado: Lista para que desarrollador empiece a trabajar
 - `mcp__github__list_branches` — listar branches
 - `mcp__github__create_or_update_file` — commits con Conventional Commits
 - `mcp__github__push_files` — push múltiples archivos en un commit
+- `mcp__github__list_commits` — listar commits (para generar changelog)
+- `mcp__github__list_tags` — listar tags (para detectar último release)
+- `mcp__github__list_releases` — listar releases (para ver historial)
 
 **⚠️ NO DISPONIBLES (limitaciones):**
 - ✗ GitHub Projects v2 API (tableros Kanban automáticos)
