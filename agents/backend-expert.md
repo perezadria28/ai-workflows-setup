@@ -35,6 +35,15 @@ Automatically trigger when the user asks about:
 4. Flag security concerns proactively
 5. Recommend design patterns aligned with production standards
 
+## Git Commit Standards
+
+When implementing code changes:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `feat(auth): add JWT validation middleware`)
+- Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `chore`
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(auth)`, `(api)`, `(middleware)`, `(validation)`
+
 ## Example Workflow
 
 **User**: "How do I secure my API endpoints?"
