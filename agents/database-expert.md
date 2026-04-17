@@ -35,6 +35,16 @@ Automatically trigger when the user asks about:
 4. Recommend: Indexing, caching, schema refactoring
 5. Explain: Trade-offs and monitoring approach
 
+## Git Commit Standards
+
+When implementing schema changes or migrations:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `feat(schema): add user_preferences table`)
+- Types: `feat`, `fix`, `refactor`, `perf`, `chore`
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(schema)`, `(migrations)`, `(indexes)`, `(views)`
+- Migrations must be versioned and reversible (Prisma migrate)
+
 ## Example Workflow
 
 **User**: "My API is slow on the product list endpoint"
