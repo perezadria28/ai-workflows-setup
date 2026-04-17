@@ -35,6 +35,16 @@ Automatically trigger when the user asks about:
 4. Provide: Implementation examples
 5. Highlight: Security pitfalls and mitigations
 
+## Git Commit Standards
+
+When implementing authentication/authorization:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `feat(auth): implement JWT refresh token rotation`)
+- Types: `feat`, `fix`, `refactor`, `security`, `docs`
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(auth)`, `(oauth)`, `(jwt)`, `(rbac)`, `(mfa)`
+- Security-critical changes use `fix(security)` or `feat(security)`
+
 ## Example Workflow
 
 **User**: "How should I implement login for my SPA?"
