@@ -1,0 +1,112 @@
+# ai-workflows-setup
+
+Portable development configuration: agents, skills, MCPs, and memory. Works across Claude Code, OpenCode, and other LLMs.
+
+## Structure
+
+```
+.
+├── .claude/
+│   ├── agents/              # Custom agents
+│   │   ├── project-planner.md
+│   │   └── task-breakdown.md
+│   ├── CLAUDE.md           # Global instructions
+│   └── settings.json       # MCP/hook config
+├── .dev/
+│   ├── MEMORY.md           # Exported Engram memory
+│   ├── AGENTS.md           # Agent documentation
+│   ├── SKILLS.md           # Skills documentation
+│   ├── MCPs.md             # MCP servers config
+│   └── PREFERENCES.md      # Global preferences
+└── README.md
+```
+
+## Setup in New Project
+
+### Option 1: Symlinks (Recommended)
+
+```bash
+# In your project root
+ln -s ~/ai-workflows-setup/.claude .claude
+ln -s ~/ai-workflows-setup/.dev .dev
+```
+
+Then push to your project repo normally.
+
+### Option 2: Copy Files
+
+```bash
+cp -r ~/ai-workflows-setup/.claude your-project/
+cp -r ~/ai-workflows-setup/.dev your-project/
+```
+
+Commit to your project repo. Updates won't sync automatically.
+
+### Option 3: Git Submodule
+
+```bash
+git submodule add git@github.com:perezadria28/ai-workflows-setup.git .dev-config
+ln -s .dev-config/.claude .claude
+ln -s .dev-config/.dev .dev
+```
+
+## What's Included
+
+### Agents
+- **project-planner**: Strategy without timings (architecture, MVP, features, market analysis, risks, evolution)
+- **task-breakdown**: Operational decomposition (phases, tasks, subtasks, dependencies, parallelization)
+
+### Global Preferences
+- Spanish (ES) language
+- Haiku model for agents
+- NO AI-powered apps by default (only workflow automation)
+- Always verify LTS versions with context7
+
+### Memory
+Exported from Engram: decisions, stack choices, discoveries, conventions
+
+## Usage in Claude Code
+
+1. Symlink `.claude/` to your project
+2. Claude Code will auto-detect:
+   - Agents in `./.claude/agents/`
+   - CLAUDE.md instructions
+   - MCP settings in settings.json
+
+## Usage in OpenCode
+
+OpenCode reads:
+- `.claude/CLAUDE.md` (file conventions fallback)
+- `.claude/skills/` (if configured)
+- `.dev/AGENTS.md` for reference
+
+Manually invoke agents documented in `.dev/AGENTS.md`
+
+## Updating
+
+If using symlinks:
+```bash
+cd ~/ai-workflows-setup
+git pull
+# Changes auto-sync to all projects
+```
+
+If using copies:
+```bash
+cd your-project
+cp -r ~/ai-workflows-setup/.dev .dev
+# Manual update
+```
+
+## Contributing
+
+Update memory, agents, or skills here:
+1. Edit relevant file
+2. Commit: `docs: update [file] with [change]`
+3. Push to main
+4. All projects with symlinks auto-update
+
+---
+
+**Created**: 2026-04-17  
+**Last updated**: [will auto-update]
