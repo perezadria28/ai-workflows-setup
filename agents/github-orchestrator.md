@@ -60,6 +60,12 @@ github-orchestrator (decide merge/cambios basado en informe)
 github-orchestrator (maneja release si aplica)
 ```
 
+## Repositorios Gestionados
+
+**Usuario**: `perezadria28`
+**Repositorios**: TODOS los de este usuario
+- Listador automático: verifica `https://github.com/perezadria28?tab=repositories`
+
 ## Restricciones
 
 - **Solo tú puedes manipular GitHub** — otros agentes generan informes, no ejecutan
