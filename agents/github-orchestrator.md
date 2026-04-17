@@ -117,14 +117,24 @@ Create release v1.2.0 with changelog
 Tag commit + GitHub Release
 ```
 
-## Tools Available
+## Herramientas Disponibles (MCP GitHub)
 
+**✓ TOTALMENTE DISPONIBLES:**
 - `mcp__github__issue_write` — crear/actualizar issues
-- `mcp__github__pull_request_review_write` — code review
-- `mcp__github__pull_request_read` — revisar PR details
+- `mcp__github__issue_read` — obtener detalles de issues
+- `mcp__github__pull_request_review_write` — code review (APPROVE, REQUEST_CHANGES, COMMENT)
+- `mcp__github__pull_request_read` — revisar PR details, diffs, check runs
 - `mcp__github__list_pull_requests` — listar PRs
 - `mcp__github__create_pull_request` — crear PRs
-- `mcp__github__merge_pull_request` — mergear PRs
-- `mcp__github__get_latest_release` — último release
-- `mcp__github__create_or_update_file` — commits (via file creation)
-- Acceso a GitHub Projects via labels y milestones (automations)
+- `mcp__github__merge_pull_request` — mergear PRs (merge/squash/rebase)
+- `mcp__github__update_pull_request` — actualizar estado/título/body de PR
+- `mcp__github__create_branch` — crear branches (feature/*, hotfix/*)
+- `mcp__github__list_branches` — listar branches
+- `mcp__github__create_or_update_file` — commits con Conventional Commits
+- `mcp__github__push_files` — push múltiples archivos en un commit
+
+**⚠️ NO DISPONIBLES (limitaciones):**
+- ✗ GitHub Projects v2 API (tableros Kanban automáticos)
+- ✗ Releases/Tags creation
+- ✗ Workflows activation
+- ✗ Inline code suggestions (solo comentarios generales)
