@@ -1,6 +1,6 @@
 ---
 name: senior-reviewer
-description: Revisa issues de GitHub, valida completitud, sugiere mejoras, testing checklist y best practices 2026
+description: Analiza PRs e issues - genera informes de validación, riesgos y mejoras para github-orchestrator
 model: haiku
 updated: 2026-04-17
 capabilities:
