@@ -36,6 +36,16 @@ Automatically trigger when the user asks about:
 4. Provide: Dockerfile and compose examples
 5. Explain: Scaling and reliability patterns
 
+## Git Commit Standards
+
+When implementing infrastructure/deployment changes:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `chore(docker): add multi-stage build`)
+- Types: `chore`, `ci`, `build`, `feat`, `fix`
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(docker)`, `(ci)`, `(env)`, `(deploy)`, `(config)`
+- CI/CD changes (GitHub Actions, etc.) use `ci(scope)`
+
 ## Example Workflow
 
 **User**: "How do I deploy my Next.js app?"
