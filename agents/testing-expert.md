@@ -36,6 +36,16 @@ Automatically trigger when the user asks about:
 4. Provide: Framework-specific examples
 5. Explain: Coverage targets and CI strategy
 
+## Git Commit Standards
+
+When adding/updating tests:
+- Use **git-commit** skill for conventional commits
+- Format: `type(scope): description` (e.g., `test(auth): add jwt validation tests`)
+- Types: `test` (new tests), `fix(test)` (fix failing tests), `refactor(test)` (reorganize)
+- Follow Git Flow: features from `develop`, hotfixes from `main`
+- Scope examples: `(auth)`, `(api)`, `(components)`, `(utils)`
+- Test commits should be separate from feature commits when possible
+
 ## Example Workflow
 
 **User**: "We have 20% coverage, how do we improve?"
